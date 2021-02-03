@@ -1,4 +1,3 @@
-"use strict";
 
 function passaSeguent(objRebut){
   let idObjPregAct = objRebut.parentElement.id; 
@@ -11,30 +10,33 @@ function passaSeguent(objRebut){
       break;
     };
   }
-  let objPregSeg = document.getElementById(idObjPregSeg);
-  objPregAct.classList.remove("elementVisible");
-  objPregAct.classList.add("elementOcult");
-  objPregSeg.classList.add("elementVisible");
-  objPregSeg.classList.remove("elementOcult");
+  amagaElement(idObjPregAct);
+mostraElement(idObjPregSeg);
 }
 
 
 function passaAnt(objRebut){
   let idObjPregAct = objRebut.parentElement.id; 
-  let objPregAct = document.getElementById(idObjPregAct);
+  //let objPregAct = document.getElementById(idObjPregAct);
   let colArticles = document.getElementsByTagName("article");
-  let idObjPregSeg;
+  let idObjPregAnt;
     for (let i = 0; i < colArticles.length; i++) {
     if(colArticles[i].id == idObjPregAct){
-      idObjPregSeg = colArticles[i-1].id;
+      idObjPregAnt = colArticles[i-1].id;
       break;
     };
   }
 amagaElement(idObjPregAct);
 mostraElement(idObjPregAnt);
+
 }
 
-function motrarElement(idRebut) {
+function mostraElement(idRebut) {
+  document.getElementById(idRebut).classList.add("elementVisible");
+  
+  document.getElementById(idRebut).classList.remove("elementOcult");
+}
+function amagaElement(idRebut) {
   document.getElementById(idRebut).classList.remove("elementVisible");
   
   document.getElementById(idRebut).classList.add("elementOcult");
