@@ -30,9 +30,12 @@ function passaAnt(objRebut){
       break;
     };
   }
-  let objPregSeg = document.getElementById(idObjPregSeg);
-  objPregAct.classList.remove("elementVisible");
-  objPregAct.classList.add("elementOcult");
-  objPregSeg.classList.add("elementVisible");
-  objPregSeg.classList.remove("elementOcult");
+amagaElement(idObjPregAct);
+mostraElement(idObjPregAnt);
+}
+
+function motrarElement(idRebut) {
+  document.getElementById(idRebut).classList.remove("elementVisible");
+  
+  document.getElementById(idRebut).classList.add("elementOcult");
 }
